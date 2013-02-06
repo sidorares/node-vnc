@@ -1,0 +1,53 @@
+{
+  "id": 0,
+  "children-display": "submenu",
+  "submenu": [
+      {
+        "id": 1,
+        "children-display": "submenu",
+        "label": "File",
+        "submenu": [
+            {
+              "id": 2,
+              "label": "Quit",
+              "shortcut": [["Control", "q"]]
+            },
+            {
+              "id": 3,
+              "label": "Open Recording"
+            },
+            {
+              "id": 94,
+              "label": "Connect...",
+              "shortcut": [["Control", "n"]]
+            }
+        ]
+      },
+      {
+        "id": 95,
+        "children-display": "submenu",
+        "label": "View",
+        "submenu": [
+            {
+              "id": 96,
+              "children-display": "submenu",
+              "label": "Zoom",
+              "submenu": [
+                  {
+                     "id": 100,
+                     "label": "50%"
+                  },
+                  {
+                     "id": 101,
+                     "label": "100%"
+                  },
+                  {
+                     "id": 102,
+                     "label": "20%"
+                  }
+               ]
+            }
+        ]
+      }
+  ]
+}
