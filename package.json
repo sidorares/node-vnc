@@ -10,7 +10,9 @@
   ],
   "description": "VNC viewer in native JS",
   "main": "vnc.js",
-  "bin" : { "vnc" : "./vnc.js" },
+  "bin": {
+    "vnc": "./vnc.js"
+  },
   "maintainers": [
     {
       "name": "Andrey Sidorov",
@@ -27,7 +29,8 @@
     "optimist": "~0.3.5",
     "dbusmenu": "~0.1.0",
     "underscore": "~1.4.3",
-    "ntk": "~0.1.0"
+    "ntk": "~0.1.0",
+    "rfb2": "0.0.1"
   },
   "devDependencies": {
     "mocha": "*"
