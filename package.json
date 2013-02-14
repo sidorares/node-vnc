@@ -1,7 +1,7 @@
 {
   "name": "vnc",
   "author": "Andrey Sidorov <sidorares@yandex.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "vnc",
     "rfb",
@@ -29,8 +29,8 @@
     "optimist": "~0.3.5",
     "dbusmenu": "~0.1.0",
     "underscore": "~1.4.3",
-    "ntk": "~0.1.0",
-    "rfb2": "0.0.1"
+    "ntk": "*",
+    "rfb2": "*"
   },
   "devDependencies": {
     "mocha": "*"
