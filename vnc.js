@@ -38,23 +38,24 @@ function main(err, app) {
       mainwnd.on('keydown', handleKeyClick);
 
       // updates from vnc server
-      var ctx = mainwnd.getContext('2d');
       r.on('resize', mainwnd.resize.bind(mainwnd));
-      r.on('rect', function(rect) {
-        if (rect.encoding == rfb.encodings.raw) {
-           rect.data = rect.buffer; // TODO: rename in rfb
-           ctx.putImageData(rect, rect.x, rect.y);
-        } else if (rect.encoding == rfb.encodings.copyRect) {
-           //ctx.drawImage(canvas, rect.src.x, rect.src.y, rect.width, rect.height, rect.x, rect.y);
-        } else if (rect.encoding == rfb.encodings.hextile) {
-           console.log('hextile rec! (currently not fully supported');
-           rect.on('tile', function(tile) {
-             console.log('tile:', tile);
-           });
-        }
+      var ctx = mainwnd.getContext('2d', function(err, ctx) {
+        r.on('rect', function(rect) {
+          if (rect.encoding == rfb.encodings.raw) {
+            rect.data = rect.buffer; // TODO: rename in rfb
+            ctx.putImageData(rect, rect.x, rect.y);
+          } else if (rect.encoding == rfb.encodings.copyRect) {
+            //ctx.drawImage(canvas, rect.src.x, rect.src.y, rect.width, rect.height, rect.x, rect.y);
+          } else if (rect.encoding == rfb.encodings.hextile) {
+            console.log('hextile rec! (currently not fully supported');
+            rect.on('tile', function(tile) {
+              console.log('tile:', tile);
+            });
+          }
+        });
       });
-      mainwnd.on('close', r.terminate.bind(r));
-      var mainmenu = mainwnd.addMenu(menu);
-      mainmenu.on('clicked', console.log);
+      mainwnd.on('close', r.end.bind(r));
+      //var mainmenu = mainwnd.addMenu(menu);
+      //mainmenu.on('clicked', console.log);
     }
 }
