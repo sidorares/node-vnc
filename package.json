@@ -25,10 +25,10 @@
     "url": "http://github.com/sidorares/node-vnc.git"
   },
   "dependencies": {
-    "x11": "~0.1.2",
-    "optimist": "~0.3.5",
+    "x11": "~2.2.1",
+    "optimist": "~0.6.1",
     "dbusmenu": "~0.1.0",
-    "underscore": "~1.4.3",
+    "underscore": "~1.8.3",
     "ntk": "*",
     "rfb2": "*"
   },
